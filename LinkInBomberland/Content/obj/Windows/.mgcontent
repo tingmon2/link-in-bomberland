@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Fonts/Highlight.spritefont</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Fonts/Regular.spritefont</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/background.png</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/bomb.png</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/boxAlt.png</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/castle.png</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/explosion.png</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/helpImage.PNG</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/link_spritesheet.png</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/mainBackground.jpg</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/sample.png</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Sounds/13. Milkshake.mp3</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Sounds/bomb.wav</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Sounds/gun.wav</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Sounds/military.mp3</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Sounds/step_cute.wav</File>
+    <File>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Sounds/walk.wav</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>Fonts/Hilight.spritefont</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

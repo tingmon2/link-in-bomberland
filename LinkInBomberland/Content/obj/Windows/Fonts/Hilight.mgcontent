@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Fonts/Highlight.spritefont</SourceFile>
+  <SourceTime>2020-11-18T09:12:58.9306051-05:00</SourceTime>
+  <DestFile>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/bin/Windows/Fonts/Hilight.xnb</DestFile>
+  <DestTime>2020-12-09T05:31:08.9811823-05:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

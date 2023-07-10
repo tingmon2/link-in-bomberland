@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Sounds/military.mp3</SourceFile>
+  <SourceTime>2020-12-06T09:46:46.9328887-05:00</SourceTime>
+  <DestFile>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/bin/Windows/Content/Sounds/military.xnb</DestFile>
+  <DestTime>2021-02-17T23:43:02.0024652-05:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/bin/Windows/Content/Sounds/military.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

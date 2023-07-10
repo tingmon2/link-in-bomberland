@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Fonts/Highlight.spritefont</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Fonts/Regular.spritefont</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/background.png</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/bomb.png</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/boxAlt.png</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/castle.png</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/explosion.png</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/helpImage.PNG</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/link_spritesheet.png</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/mainBackground.jpg</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Images/sample.png</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Sounds/13. Milkshake.mp3</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Sounds/bomb.wav</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Sounds/gun.wav</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Sounds/military.mp3</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Sounds/step_cute.wav</File>
+    <File>E:/Downloads/PEER interview/Solution/LinkInBomberland/LinkInBomberland/Content/Sounds/walk.wav</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>Fonts/Hilight.spritefont</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

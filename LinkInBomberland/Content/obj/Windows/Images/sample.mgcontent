@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/Images/sample.png</SourceFile>
-  <SourceTime>2013-05-19T23:52:14.8453079-04:00</SourceTime>
-  <DestFile>C:/Users/tingmon/source/repos/LinkInBomberland/LinkInBomberland/Content/bin/Windows/Images/sample.xnb</DestFile>
-  <DestTime>2020-12-09T05:31:09.3415551-05:00</DestTime>
+  <SourceFile>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/sample.png</SourceFile>
+  <SourceTime>2021-02-18T20:45:53-07:00</SourceTime>
+  <DestFile>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/bin/Windows/Images/sample.xnb</DestFile>
+  <DestTime>2023-07-14T23:55:20.2879271-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
+  <ImporterTime>2018-12-08T09:35:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T09:35:54-07:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

@@ -4,17 +4,17 @@
   <description asmv2:publisher="Taekmin Jeong" asmv2:product="Link In Bomberland" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="LinkInBomberland.exe.manifest" size="18344">
+    <dependentAssembly dependencyType="install" codebase="LinkInBomberland.exe.manifest" size="18748">
       <assemblyIdentity name="LinkInBomberland.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uA0BBQBqZ3Ubo71PUg8bNbarj3g/5S49h0DNJ28boXo=</dsig:DigestValue>
+        <dsig:DigestValue>S296P+ETL0TwIp09GCcxVdBDF34B43UfJMR34kcDx0w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

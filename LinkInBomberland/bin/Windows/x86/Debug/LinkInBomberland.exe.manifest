@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinkInBomberland.exe" size="202736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinkInBomberland.exe" size="201728">
       <assemblyIdentity name="LinkInBomberland" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MYqcvTZsmYOZqZdZtqaVBjvWdQQyYfX49HCJuQwPDtA=</dsig:DigestValue>
+        <dsig:DigestValue>2O0wU/C5JQ0bb1kC2ByqvRzAnE6GIuPZsHBk/E0MGqQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -364,6 +364,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>w3hsUaqrnLNyB0YuBPTNsy43j2WodZ9/DHeQN0YJwQA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="LinkInBomberland.exe.config" size="161">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1hvekB5xicyX1FodTEqjnUxN4raEGXc+x3QzhQbWWa0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

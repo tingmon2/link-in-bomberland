@@ -25,7 +25,7 @@ namespace LinkInBomberland
             tex = game.Content.Load<Texture2D>("Images/helpImage");
 
             helpString = new NormalString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
-                position, Color.Black, "This is game is made by Taekmin Jeong \n2020-12-06");
+                position, Color.Black, "This is game is made by Taekmin Jeong \nv1 2020-12-06\nv2 2023-07-14");
             this.Components.Add(helpString);
         }
 

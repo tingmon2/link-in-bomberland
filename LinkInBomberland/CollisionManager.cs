@@ -79,170 +79,173 @@ namespace LinkInBomberland
             const int UP = 3;
             const int DOWN = 4;
 
-            foreach (var item in wallList)
+            if (link.LinkAlive)
             {
-                // decision when player press left button
-                if (!ks.IsKeyDown(Keys.Right))
+                foreach (var item in wallList)
                 {
-                    // only cares about walls within radar range 
-                    // wall is on the left side of the player
-                    // also, y-coordinate should not exceed radar range
-                    if (center.X > item.Position.X + item.Tex.Width 
-                        && center.Y + radarRange > item.Position.Y
-                        && center.Y - radarRange < item.Position.Y + item.Tex.Height)
+                    // decision when player press left button
+                    if (!ks.IsKeyDown(Keys.Right))
                     {
-                        // player's x-coordinate is smaller means item(box) is close enough,
-                        // so player cannnot move left
-                        if (center.X - rangeX < item.Position.X + item.Tex.Width) //left
+                        // only cares about walls within radar range 
+                        // wall is on the left side of the player
+                        // also, y-coordinate should not exceed radar range
+                        if (center.X > item.Position.X + item.Tex.Width
+                            && center.Y + radarRange > item.Position.Y
+                            && center.Y - radarRange < item.Position.Y + item.Tex.Height)
                         {
-                            link.BanLeft = true;
-                            latestBan = LEFT;
-                            collisionCounter++;
+                            // player's x-coordinate is smaller means item(box) is close enough,
+                            // so player cannnot move left
+                            if (center.X - rangeX < item.Position.X + item.Tex.Width) //left
+                            {
+                                link.BanLeft = true;
+                                latestBan = LEFT;
+                                collisionCounter++;
+                            }
+                        }
+                    }
+                    if (!ks.IsKeyDown(Keys.Left))
+                    {
+                        if (center.X < item.Position.X
+                            && center.Y + radarRange > item.Position.Y
+                            && center.Y - radarRange < item.Position.Y + item.Tex.Height)
+                        {
+                            if (center.X + rangeX > item.Position.X) //right
+                            {
+                                link.BanRight = true;
+                                latestBan = RIGHT;
+                                collisionCounter++;
+                            }
+                        }
+                    }
+                    if (!ks.IsKeyDown(Keys.Down))
+                    {
+                        if (center.Y > item.Position.Y + item.Tex.Height
+                            && center.X + radarRange > item.Position.X
+                            && center.X - radarRange < item.Position.X + item.Tex.Width)
+                        {
+                            if (center.Y - rangeY < item.Position.Y + item.Tex.Height) //up
+                            {
+                                link.BanUp = true;
+                                latestBan = UP;
+                                collisionCounter++;
+                            }
+                        }
+                    }
+                    if (!ks.IsKeyDown(Keys.Up))
+                    {
+                        if (center.Y < item.Position.Y
+                            && center.X + radarRange > item.Position.X
+                            && center.X - radarRange < item.Position.X + item.Tex.Width)
+                        {
+                            if (center.Y + rangeY > item.Position.Y) //down
+                            {
+                                link.BanDown = true;
+                                latestBan = DOWN;
+                                collisionCounter++;
+                            }
                         }
                     }
                 }
-                if (!ks.IsKeyDown(Keys.Left))
-                {
-                    if (center.X < item.Position.X 
-                        && center.Y + radarRange > item.Position.Y
-                        && center.Y - radarRange < item.Position.Y + item.Tex.Height)
-                    {
-                        if (center.X + rangeX > item.Position.X) //right
-                        {
-                            link.BanRight = true;
-                            latestBan = RIGHT;
-                            collisionCounter++;
-                        }
-                    }
-                }
-                if (!ks.IsKeyDown(Keys.Down))
-                {
-                    if (center.Y > item.Position.Y + item.Tex.Height 
-                        && center.X + radarRange > item.Position.X
-                        && center.X - radarRange < item.Position.X + item.Tex.Width)
-                    {
-                        if (center.Y - rangeY < item.Position.Y + item.Tex.Height) //up
-                        {
-                            link.BanUp = true;
-                            latestBan = UP;
-                            collisionCounter++;
-                        }
-                    }
-                }
-                if (!ks.IsKeyDown(Keys.Up))
-                {
-                    if (center.Y < item.Position.Y 
-                        && center.X + radarRange > item.Position.X
-                        && center.X - radarRange < item.Position.X + item.Tex.Width)
-                    {
-                        if (center.Y + rangeY > item.Position.Y) //down
-                        {
-                            link.BanDown = true;
-                            latestBan = DOWN;
-                            collisionCounter++;
-                        }
-                    }
-                }
-            }
 
-            // this iteration does same as above iteration code.
-            // however it manages collide between player and bomb
-            foreach (var item in bombList)
-            {
-                if (!ks.IsKeyDown(Keys.Right))
+                // this iteration does same as above iteration code.
+                // however it manages collide between player and bomb
+                foreach (var item in bombList)
                 {
-                    if (centerX > item.Position.X + item.Tex.Width 
-                        && centerY + radarRange > item.Position.Y
-                        && centerY - radarRange < item.Position.Y + item.Tex.Height)
+                    if (!ks.IsKeyDown(Keys.Right))
                     {
-                        if (center.X - rangeX < item.Position.X + item.Tex.Width) //left
+                        if (centerX > item.Position.X + item.Tex.Width
+                            && centerY + radarRange > item.Position.Y
+                            && centerY - radarRange < item.Position.Y + item.Tex.Height)
                         {
-                            link.BanLeft = true;
-                            latestBan = LEFT;
-                            collisionCounter++;
+                            if (center.X - rangeX < item.Position.X + item.Tex.Width) //left
+                            {
+                                link.BanLeft = true;
+                                latestBan = LEFT;
+                                collisionCounter++;
+                            }
                         }
                     }
-                }
-                if (!ks.IsKeyDown(Keys.Left))
-                {
-                    if (centerX < item.Position.X 
-                        && centerY + radarRange > item.Position.Y
-                        && centerY - radarRange < item.Position.Y + item.Tex.Height)
+                    if (!ks.IsKeyDown(Keys.Left))
                     {
-                        if (center.X + rangeX > item.Position.X) //right
+                        if (centerX < item.Position.X
+                            && centerY + radarRange > item.Position.Y
+                            && centerY - radarRange < item.Position.Y + item.Tex.Height)
                         {
-                            link.BanRight = true;
-                            latestBan = RIGHT;
-                            collisionCounter++;
+                            if (center.X + rangeX > item.Position.X) //right
+                            {
+                                link.BanRight = true;
+                                latestBan = RIGHT;
+                                collisionCounter++;
+                            }
                         }
                     }
-                }
-                if (!ks.IsKeyDown(Keys.Down))
-                {
-                    if (centerY > item.Position.Y + item.Tex.Height 
-                        && centerX + radarRange > item.Position.X
-                        && centerX - radarRange < item.Position.X + item.Tex.Width)
+                    if (!ks.IsKeyDown(Keys.Down))
                     {
-                        if (center.Y - rangeY < item.Position.Y + item.Tex.Height) //up
+                        if (centerY > item.Position.Y + item.Tex.Height
+                            && centerX + radarRange > item.Position.X
+                            && centerX - radarRange < item.Position.X + item.Tex.Width)
                         {
-                            link.BanUp = true;
-                            latestBan = UP;
-                            collisionCounter++;
+                            if (center.Y - rangeY < item.Position.Y + item.Tex.Height) //up
+                            {
+                                link.BanUp = true;
+                                latestBan = UP;
+                                collisionCounter++;
+                            }
                         }
                     }
-                }
-                if (!ks.IsKeyDown(Keys.Up))
-                {
-                    if (centerY < item.Position.Y 
-                        && centerX + radarRange > item.Position.X
-                        && centerX - radarRange < item.Position.X + item.Tex.Width)
+                    if (!ks.IsKeyDown(Keys.Up))
                     {
-                        if (center.Y + rangeY > item.Position.Y) //down
+                        if (centerY < item.Position.Y
+                            && centerX + radarRange > item.Position.X
+                            && centerX - radarRange < item.Position.X + item.Tex.Width)
                         {
-                            link.BanDown = true;
-                            latestBan = DOWN;
-                            collisionCounter++;
+                            if (center.Y + rangeY > item.Position.Y) //down
+                            {
+                                link.BanDown = true;
+                                latestBan = DOWN;
+                                collisionCounter++;
+                            }
                         }
                     }
+
                 }
-                
-            }
-            if(collisionCounter == 0)
-            {
-                link.BanLeft = false;
-                link.BanRight = false;
-                link.BanUp = false;
-                link.BanDown = false;
-            }
-            else if(collisionCounter < 2)
-            {
-                if(latestBan == LEFT) //left
-                {
-                    link.BanLeft = true;
-                    link.BanRight = false;
-                    link.BanUp = false;
-                    link.BanDown = false;
-                }
-                if (latestBan == RIGHT) //right
-                {
-                    link.BanLeft = false;
-                    link.BanRight = true;
-                    link.BanUp = false;
-                    link.BanDown = false;
-                }
-                if (latestBan == UP) //up
-                {
-                    link.BanLeft = false;
-                    link.BanRight = false;
-                    link.BanUp = true;
-                    link.BanDown = false;
-                }
-                if (latestBan == DOWN) //down
+                if (collisionCounter == 0)
                 {
                     link.BanLeft = false;
                     link.BanRight = false;
                     link.BanUp = false;
-                    link.BanDown = true;
+                    link.BanDown = false;
+                }
+                else if (collisionCounter < 2)
+                {
+                    if (latestBan == LEFT) //left
+                    {
+                        link.BanLeft = true;
+                        link.BanRight = false;
+                        link.BanUp = false;
+                        link.BanDown = false;
+                    }
+                    if (latestBan == RIGHT) //right
+                    {
+                        link.BanLeft = false;
+                        link.BanRight = true;
+                        link.BanUp = false;
+                        link.BanDown = false;
+                    }
+                    if (latestBan == UP) //up
+                    {
+                        link.BanLeft = false;
+                        link.BanRight = false;
+                        link.BanUp = true;
+                        link.BanDown = false;
+                    }
+                    if (latestBan == DOWN) //down
+                    {
+                        link.BanLeft = false;
+                        link.BanRight = false;
+                        link.BanUp = false;
+                        link.BanDown = true;
+                    }
                 }
             }
         }

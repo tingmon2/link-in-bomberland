@@ -74,13 +74,16 @@ namespace LinkInBomberland
             if(position == Vector2.Zero)
             {
                 // shows score on the top-left screen 
-                message = ActionScene.GameTimer.ToString();
+                message = ActionScene.Score.ToString();
             }
             else
             {
                 // game over string
-                score = ActionScene.GameTimer.ToString();
-                message = "Link has been attacked!\nGame Over!\nYour score is " + score + "\nPress ESC button";
+                score = ActionScene.Score.ToString();
+                message = "----------- Game Over ----------" +
+                    "\n        Link is attacked!" +
+                    "\n        Your score is " + score + 
+                    "\n        Press ESC button";
             }
             base.Update(gameTime);
         }

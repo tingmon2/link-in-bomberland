@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+using System.Xml.Schema;
 
 namespace LinkInBomberland
 {
@@ -18,7 +19,7 @@ namespace LinkInBomberland
         private Link link;
         private Wall wall;
         private Box box;
-        private ActionString score;
+        private ActionString scoreString;
         private ActionString gameOver;
         private Bomb bomb;
         private Random r = new Random(); 
@@ -32,8 +33,10 @@ namespace LinkInBomberland
         private SoundEffect bombSound;
         private int level = 100;
         private int counter = 0;
+        private static int score = 0;
+        private int scoreValue = 100;
 
-        private static int gameTimer = 0;
+        private int gameTimer = 0;
         private static Game gameStatic;
 
         private const int WALL_WIDTH = 70;
@@ -43,7 +46,7 @@ namespace LinkInBomberland
         private const int SIZE_Y = 490;
 
         public bool IsGameOver { get => isGameOver; set => isGameOver = value; }
-        public static int GameTimer { get => gameTimer; set => gameTimer = value; }
+        public static int Score { get => score; set => score = value; }
 
         public ActionScene(Game game, SpriteBatch spriteBatch) : base(game)
         {
@@ -71,15 +74,15 @@ namespace LinkInBomberland
             DrawWall();
             
             //bomb
-            BombCreater();
+            BombCreator();
 
             //collision manager
             cm = new CollisionManager(game, link, wall, bomb);
 
             //score string
-            score = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
+            scoreString = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
                 Vector2.Zero, Color.Black, link);
-            this.Components.Add(score);
+            this.Components.Add(scoreString);
             
             //game over string
             gameOver = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"), 
@@ -107,6 +110,7 @@ namespace LinkInBomberland
                         this.Components.Remove(bombList[0]);
                         bombList.RemoveAt(0);
                         bombSound.Play();
+                        score += scoreValue;
                     }
                 }
                 if (gameTimer % 100 == 0)
@@ -121,23 +125,27 @@ namespace LinkInBomberland
                 // bomb making frequency will be shortened as timer gets bigger
                 if (gameTimer % level == 0)
                 {
-                    BombCreater();
+                    BombCreator();
                 }
                 if (gameTimer > 500)
                 {
                     level = 80;
+                    scoreValue += 10;
                 }
                 if (gameTimer > 700)
                 {
                     level = 60;
+                    scoreValue += 20;
                 }
                 if (gameTimer > 1000)
                 {
                     level = 40;
+                    scoreValue += 30;
                 }
                 if (gameTimer > 1500)
                 {
                     level = 20;
+                    scoreValue += 50;
                 }
                 base.Update(gameTime);
             }
@@ -156,7 +164,7 @@ namespace LinkInBomberland
             }
             if (!link.LinkAlive)
             {
-                gameOver.Color = Color.Red;
+                gameOver.Color = Color.Blue;
                 this.Components.Add(gameOver);
             }
 
@@ -236,7 +244,7 @@ namespace LinkInBomberland
         /// <summary>
         /// create bomb but not on wall position
         /// </summary>
-        private void BombCreater()
+        private void BombCreator()
         {
             for (int i = 0; i < 1; i++)
             {

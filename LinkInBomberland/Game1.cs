@@ -13,7 +13,7 @@ namespace LinkInBomberland
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        //declatre all scene references
+        //declare all scene references
         private StartScene startScene;
         private ActionScene actionScene;
         private HelpScene helpScene;

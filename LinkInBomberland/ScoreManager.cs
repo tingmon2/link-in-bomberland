@@ -37,14 +37,15 @@ namespace LinkInBomberland
             String[] strArr = rawText.Split(new char[] { '\n' });
             foreach (String str in strArr)
             {
-                if (str.Length > 0)
+                int score = 0;
+                if (Int32.TryParse(str,out score))
                 {
-                    scores.Add(int.Parse(str));
-                    scores.Sort();
-                    scores.Reverse();
+                    scores.Add(score);
                 }
 
             }
+            scores.Sort();
+            scores.Reverse();
             return scores;
         }
 
@@ -56,14 +57,15 @@ namespace LinkInBomberland
             String[] strArr = rawText.Split(new char[] { '\n' });
             foreach (String str in strArr)
             {
-                if (str.Length > 0)
+                int score = 0;
+                if (Int32.TryParse(str, out score))
                 {
-                    scores.Add(int.Parse(str));
-                    scores.Sort();
-                    scores.Reverse();
+                    scores.Add(score);
                 }
             }
-            scores.RemoveRange(scores.Count - 2, 2);
+            scores.Sort();
+            scores.Reverse();
+            //scores.RemoveRange(scores.Count - 2, 2);
             if (scores.Contains(newScore))
             {
                 newRecord = true;

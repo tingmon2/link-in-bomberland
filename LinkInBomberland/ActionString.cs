@@ -21,6 +21,7 @@ namespace LinkInBomberland
         private Color color;
         private Link link;
         private string score;
+        private bool newRecord;
 
         public SpriteFont Font { get => font; set => font = value; }
         public string Message { get => message; set => message = value; }
@@ -31,15 +32,17 @@ namespace LinkInBomberland
             SpriteFont font,
             Vector2 position,
             Color color,
-            Link link) : base(game)
+            Link link,
+            bool newRecord) : base(game)
         {
             this.spriteBatch = spriteBatch;
             this.font = font;
             this.position = position;
             this.color = color;
             this.link = link;
+            this.newRecord = newRecord;
 
-            if(color == Color.Red)
+            if (color == Color.Red)
             {
                 hide();
             }
@@ -47,6 +50,8 @@ namespace LinkInBomberland
             {
                 show();
             }
+
+
         }
 
         public void hide()
@@ -78,12 +83,24 @@ namespace LinkInBomberland
             }
             else
             {
-                // game over string
-                score = ActionScene.Score.ToString();
-                message = "----------- Game Over ----------" +
-                    "\n        Link is attacked!" +
-                    "\n        Your score is " + score + 
-                    "\n        Press ESC button";
+                if (newRecord)
+                {
+                    score = ActionScene.Score.ToString();
+                    message = "----------- Game Over ----------" +
+                        "\n        Link is attacked!" +
+                        "\n        Your score is " + score +
+                        "\n        Congratulations! New Record!" +
+                        "\n        Press ESC button";
+                }
+                else
+                {
+                    // game over string
+                    score = ActionScene.Score.ToString();
+                    message = "----------- Game Over ----------" +
+                        "\n        Link is attacked!" +
+                        "\n        Your score is " + score +
+                        "\n        Press ESC button";
+                }
             }
             base.Update(gameTime);
         }

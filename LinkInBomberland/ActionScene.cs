@@ -86,16 +86,16 @@ namespace LinkInBomberland
 
             //score string
             scoreString = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
-                Vector2.Zero, Color.Black, link);
+                Vector2.Zero, Color.Black, link, false);
             this.Components.Add(scoreString);
             
             //game over string
             gameOver = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"), 
-                new Vector2(SIZE_X/2 - 120, SIZE_Y/2), Color.Transparent, link);
+                new Vector2(SIZE_X/2 - 120, SIZE_Y/2), Color.Transparent, link, false);
             this.Components.Add(gameOver);
 
             gameOverWithNewRecord = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"),
-                new Vector2(SIZE_X / 2 - 120, SIZE_Y / 2), Color.Transparent, link);
+                new Vector2(SIZE_X / 2 - 120, SIZE_Y / 2), Color.Transparent, link, true);
             this.Components.Add(gameOverWithNewRecord);
 
 
@@ -139,22 +139,18 @@ namespace LinkInBomberland
                 if (gameTimer > 500)
                 {
                     level = 80;
-                    scoreValue += 5;
                 }
                 if (gameTimer > 700)
                 {
                     level = 60;
-                    scoreValue += 10;
                 }
                 if (gameTimer > 1000)
                 {
                     level = 40;
-                    scoreValue += 15;
                 }
                 if (gameTimer > 1500)
                 {
                     level = 20;
-                    scoreValue += 20;
                 }
                 base.Update(gameTime);
             }
@@ -177,11 +173,13 @@ namespace LinkInBomberland
                 {
                     gameOverWithNewRecord.Color = Color.Red;
                     this.Components.Add(gameOverWithNewRecord);
+                    score = 0;
                 }
                 else
                 {
                     gameOver.Color = Color.Red;
                     this.Components.Add(gameOver);
+                    score = 0;
                 }
             }
         }

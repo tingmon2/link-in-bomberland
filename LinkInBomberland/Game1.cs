@@ -18,6 +18,7 @@ namespace LinkInBomberland
         private ActionScene actionScene;
         private HelpScene helpScene;
         private CreditScene creditScene;
+        private HighScoreScene highScoreScene;
 
 
         private Song song;
@@ -27,7 +28,7 @@ namespace LinkInBomberland
         private const int SIZE_Y = 560;
         private const int START_GAME = 0;
         private const int HELP = 1;
-        //private const int HIGH_SCORE = 2;
+        private const int HIGH_SCORE = 2;
         private const int CREDIT = 3;
         private const int QUIT = 4;
 
@@ -107,6 +108,9 @@ namespace LinkInBomberland
             helpScene = new HelpScene(this, spriteBatch);
             this.Components.Add(helpScene);
 
+            highScoreScene = new HighScoreScene(this, spriteBatch);
+            this.Components.Add(highScoreScene);
+
             creditScene = new CreditScene(this, spriteBatch);
             this.Components.Add(creditScene);
 
@@ -162,6 +166,12 @@ namespace LinkInBomberland
                     startScene.hide();
                     helpScene.show();
                 }
+                if (selectedIndex == HIGH_SCORE && ks.IsKeyDown(Keys.Enter))
+                {
+                    hideAllScenes();
+                    startScene.hide();
+                    highScoreScene.show();
+                }
                 if (selectedIndex == CREDIT && ks.IsKeyDown(Keys.Enter))
                 {
                     hideAllScenes();
@@ -188,6 +198,14 @@ namespace LinkInBomberland
 
             // other scenes control
             if (helpScene.Enabled)
+            {
+                if (ks.IsKeyDown(Keys.Escape))
+                {
+                    hideAllScenes();
+                    startScene.show();
+                }
+            }
+            if (highScoreScene.Enabled)
             {
                 if (ks.IsKeyDown(Keys.Escape))
                 {

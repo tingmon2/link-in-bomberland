@@ -38,7 +38,7 @@ namespace LinkInBomberland
             
             menuItems = menus.ToList<string>();
 
-            position = new Vector2(Shared.stage.X / 2, Shared.stage.Y / 2);
+            position = new Vector2(Shared.stage.X / 2 - 70, Shared.stage.Y / 2 + 80);
         }
 
         public override void Draw(GameTime gameTime)

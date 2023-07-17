@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinkInBomberland.exe" size="201728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinkInBomberland.exe" size="204288">
       <assemblyIdentity name="LinkInBomberland" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tRPiXfgyg8GjSyi1aAwfTfYJaKdGb605Gc0Sl1T0Wbg=</dsig:DigestValue>
+        <dsig:DigestValue>i4/uy43C/rESgoFquFP0nO8OjBCuyw2D7ZYFoHtFM6M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -256,6 +256,42 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>fIXFpJL0yPIbvubfvvlQBxNBNOaTA9FXBfksjb4Oilo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Images\link1.xnb" size="940885">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uemjCWg5mgFimuaudcnXnm/CEpId5pZmcDSOLhI8Cu0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Images\link3.xnb" size="960085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nljPRZluvpJih8UEi7mafjMXynRgLTs1+qXHN7dCYMA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Images\link4.xnb" size="1000085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>X+374CjPHzSEdcsjUCy5Dh8XykdnsRrOcKo7DAWiZFg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Images\link5.xnb" size="1884245">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>OfnpHcBvLpmm7wcdsx2nWlNVm50QXbM3csI0IdlRzqo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Images\mainBackground.xnb" size="1881685">

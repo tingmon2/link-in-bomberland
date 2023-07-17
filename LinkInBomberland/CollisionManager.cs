@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
@@ -69,7 +70,7 @@ namespace LinkInBomberland
             int centerX = ((int)link.Position.X + (int)link.Position.X + 46) / 2;
             int centerY = ((int)link.Position.Y + (int)link.Position.Y + 50) / 2;
             Vector2 center = new Vector2(centerX, centerY); // center position of link
-            int radarRange = 10; // 레이더 범위 안의 사각형에 대해 충돌 계산
+            int radarRange = 10; // calculate collision within the rader range
             int rangeX = 18; // manually typed to avoid bug
             int rangeY = 19;
             int collisionCounter = 0;

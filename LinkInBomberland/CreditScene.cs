@@ -21,10 +21,10 @@ namespace LinkInBomberland
         public CreditScene(Game game, SpriteBatch spriteBatch) : base(game)
         {
             this.spriteBatch = spriteBatch;
-            Vector2 position = new Vector2(250, 400);
-            tex = game.Content.Load<Texture2D>("Images/helpImage");
+            Vector2 position = new Vector2(220, 450);
+            tex = game.Content.Load<Texture2D>("Images/link3");
 
-            helpString = new NormalString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
+            helpString = new NormalString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"),
                 position, Color.Black, "This is game is made by Taekmin Jeong \nv1 2020-12-06\nv2 2023-07-14");
             this.Components.Add(helpString);
         }
@@ -33,7 +33,7 @@ namespace LinkInBomberland
         {
             spriteBatch.Begin();
 
-            spriteBatch.Draw(tex, new Vector2(150, 40), Color.White);
+            spriteBatch.Draw(tex, new Vector2(130, 40), Color.White);
 
             spriteBatch.End();
 

@@ -25,7 +25,7 @@ namespace LinkInBomberland
             tex = game.Content.Load<Texture2D>("Images/helpImage");
 
             helpString = new NormalString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"), 
-                position, Color.Black, "Help link to hide from bombardment!!\nSpace key: mute/unmute background music\nUp arrow key: move up\nDown arrow key: move down\n" +
+                position, Color.Black, "\nSpace key: mute/unmute background music\nUp arrow key: move up\nDown arrow key: move down\n" +
                 "Left arrow key: move left\nRight arrow key: move right");
             this.Components.Add(helpString);
         }

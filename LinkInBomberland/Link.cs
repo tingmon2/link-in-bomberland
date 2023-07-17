@@ -150,116 +150,118 @@ namespace LinkInBomberland
             ks = Keyboard.GetState();
             Vector2 lastPosition = position;
 
-            if (ks.IsKeyDown(Keys.Up))
+            if (linkAlive) 
             {
-                // moving up is banned. maintain position
-                if(BanUp)
+                if (ks.IsKeyDown(Keys.Up))
                 {
-                    position = lastPosition;
-                    walkCounter++;
-                }
-                else
-                {
-                    position -= speedY;
-                    walkCounter++;
-                }
+                    // moving up is banned. maintain position
+                    if (BanUp)
+                    {
+                        position = lastPosition;
+                        walkCounter++;
+                    }
+                    else
+                    {
+                        position -= speedY;
+                        walkCounter++;
+                    }
 
-                // link is at the edge of top. maintain position
-                if (position.Y < 0 + WALL_WIDTH)
-                {
-                    position.Y = WALL_WIDTH;
-                    walkCounter++;
-                }
+                    // link is at the edge of top. maintain position
+                    if (position.Y < 0 + WALL_WIDTH)
+                    {
+                        position.Y = WALL_WIDTH;
+                        walkCounter++;
+                    }
 
-                delayCounter++;
-                // update frame index when delay counter is bigger than delay
-                if (delayCounter > delay)
-                {
-                    IndexUpdate(20);
-                }
+                    delayCounter++;
+                    // update frame index when delay counter is bigger than delay
+                    if (delayCounter > delay)
+                    {
+                        IndexUpdate(20);
+                    }
 
+                }
+                else if (ks.IsKeyDown(Keys.Down))
+                {
+                    if (BanDown)
+                    {
+                        position = lastPosition;
+                        walkCounter++;
+                    }
+                    else
+                    {
+                        position += speedY;
+                        walkCounter++;
+                    }
+
+                    if (position.Y > 560 - frames[frameIndex].Height / 2 - WALL_WIDTH)
+                    {
+                        position.Y = 560 - frames[frameIndex].Height / 2 - WALL_WIDTH;
+                        walkCounter++;
+                    }
+                    delayCounter++;
+                    if (delayCounter > delay)
+                    {
+                        IndexUpdate(0);
+                    }
+
+                }
+                else if (ks.IsKeyDown(Keys.Left))
+                {
+                    if (BanLeft)
+                    {
+                        position = lastPosition;
+                        walkCounter++;
+                    }
+                    else
+                    {
+                        position -= speedX;
+                        walkCounter++;
+                    }
+
+                    if (position.X < 0 + WALL_WIDTH)
+                    {
+                        position.X = WALL_WIDTH;
+                        walkCounter++;
+                    }
+                    delayCounter++;
+                    if (delayCounter > delay)
+                    {
+                        IndexUpdate(10);
+                    }
+                }
+                else if (ks.IsKeyDown(Keys.Right))
+                {
+                    if (BanRight)
+                    {
+                        position = lastPosition;
+                        walkCounter++;
+                    }
+                    else
+                    {
+                        position += speedX;
+                        walkCounter++;
+                    }
+
+                    if (position.X > 840 - frames[frameIndex].Width / 2 - WALL_WIDTH)
+                    {
+                        position.X = 840 - frames[frameIndex].Width / 2 - WALL_WIDTH;
+                        walkCounter++;
+                    }
+
+                    delayCounter++;
+                    if (delayCounter > delay)
+                    {
+                        IndexUpdate(30);
+                    }
+                }
+                // play walking sound effect
+                if (walkCounter % WALK_INTERVAL == 0 && walkCounter > 0)
+                {
+                    walkCounter = 0;
+                    walkSound.Play();
+                }
             }
-            else if (ks.IsKeyDown(Keys.Down))
-            {
-                if (BanDown)
-                {
-                    position = lastPosition;
-                    walkCounter++;
-                }
-                else
-                {
-                    position += speedY;
-                    walkCounter++;
-                }
-
-                if (position.Y > 560 - frames[frameIndex].Height / 2 - WALL_WIDTH)
-                {
-                    position.Y = 560 - frames[frameIndex].Height / 2 - WALL_WIDTH;
-                    walkCounter++;
-                }
-                delayCounter++;
-                if (delayCounter > delay)
-                {
-                    IndexUpdate(0);
-                }
-
-            }
-            else if (ks.IsKeyDown(Keys.Left))
-            {
-                if (BanLeft)
-                {
-                    position = lastPosition;
-                    walkCounter++;
-                }
-                else
-                {
-                    position -= speedX;
-                    walkCounter++;
-                }
-
-                if (position.X < 0 + WALL_WIDTH)
-                {
-                    position.X = WALL_WIDTH;
-                    walkCounter++;
-                }
-                delayCounter++;
-                if (delayCounter > delay)
-                {
-                    IndexUpdate(10);
-                }
-            }
-            else if (ks.IsKeyDown(Keys.Right))
-            {
-                if (BanRight)
-                {
-                    position = lastPosition;
-                    walkCounter++;
-                }
-                else
-                {
-                    position += speedX;
-                    walkCounter++;
-                }
-
-                if (position.X > 840 - frames[frameIndex].Width / 2 - WALL_WIDTH)
-                {
-                    position.X = 840 - frames[frameIndex].Width / 2 - WALL_WIDTH;
-                    walkCounter++;
-                }
-
-                delayCounter++;
-                if (delayCounter > delay)
-                {
-                    IndexUpdate(30);
-                }
-            }
-            // play walking sound effect
-            if(walkCounter % WALK_INTERVAL == 0 && walkCounter > 0)
-            {
-                walkCounter = 0;
-                walkSound.Play();
-            }
-
             base.Update(gameTime);
         }
     }

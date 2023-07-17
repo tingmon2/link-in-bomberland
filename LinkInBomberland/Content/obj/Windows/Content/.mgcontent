@@ -13,6 +13,10 @@
     <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/explosion.png</File>
     <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/helpImage.PNG</File>
     <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/link_spritesheet.png</File>
+    <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/link1.jpg</File>
+    <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/link3.jpg</File>
+    <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/link4.png</File>
+    <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/link5.png</File>
     <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/mainBackground.jpg</File>
     <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Images/sample.png</File>
     <File>C:/Users/tingmon/Downloads/gibhub backup/link_in_bomberland-master/LinkInBomberland/Content/Sounds/13. Milkshake.mp3</File>
@@ -24,6 +28,10 @@
   </SourceFiles>
   <DestFiles>
     <File>Fonts/Hilight.spritefont</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

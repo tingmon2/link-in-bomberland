@@ -17,7 +17,7 @@ namespace LinkInBomberland
         private MenuComponent menu;
         private SpriteBatch spriteBatch;
         private ActionBackground startBackground;
-        private string[] menuItems = {"Start game", "Help", "High Score", "Credit", "Quit" };
+        private string[] menuItems = {"Game Start", "Help", "High Score", "Credit", "Quit" };
 
         public MenuComponent Menu { get => menu; set => menu = value; }
 
@@ -33,9 +33,7 @@ namespace LinkInBomberland
                 game.Content.Load<SpriteFont>("Fonts/Regular"),
                 game.Content.Load<SpriteFont>("Fonts/Hilight"),
                 menuItems);
-
             this.Components.Add(menu);
-
         }
 
        

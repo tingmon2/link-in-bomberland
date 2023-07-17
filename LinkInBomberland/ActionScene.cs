@@ -20,14 +20,15 @@ namespace LinkInBomberland
         private Wall wall;
         private Box box;
         private ActionString scoreString;
-        private ActionString gameOver;
+        private ActionString gameOver; // message when game over
         private Bomb bomb;
         private Random r = new Random(); 
-        private List<Vector2> wallPositionList = new List<Vector2>(); // 벽에 폭탄이 그려지는 것을 막기 위해
-        private List<Bomb> bombList = new List<Bomb>(); // 리스트 내용물은 계속 업데이트 됨
-        private List<Explosion> explosionList = new List<Explosion>(); // 리스트 내용물은 계속 업데이트 됨
-        private List<Wall> wallList = new List<Wall>(); // 리스트 내용물은 초기화된 뒤 고정
+        private List<Vector2> wallPositionList = new List<Vector2>(); // To avoid placing bomb on the wall
+        private List<Bomb> bombList = new List<Bomb>();  // dynamic list
+        private List<Explosion> explosionList = new List<Explosion>(); // dynamic list
+        private List<Wall> wallList = new List<Wall>(); // This list will be fixed after initialised
         private CollisionManager cm;
+        private ScoreManager sm;
         private bool isGameOver = false;
         private SoundEffect walkSound;
         private SoundEffect bombSound;
@@ -78,6 +79,9 @@ namespace LinkInBomberland
 
             //collision manager
             cm = new CollisionManager(game, link, wall, bomb);
+
+            //score manager
+            sm = new ScoreManager();
 
             //score string
             scoreString = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
@@ -130,22 +134,22 @@ namespace LinkInBomberland
                 if (gameTimer > 500)
                 {
                     level = 80;
-                    scoreValue += 10;
+                    scoreValue += 5;
                 }
                 if (gameTimer > 700)
                 {
                     level = 60;
-                    scoreValue += 20;
+                    scoreValue += 10;
                 }
                 if (gameTimer > 1000)
                 {
                     level = 40;
-                    scoreValue += 30;
+                    scoreValue += 15;
                 }
                 if (gameTimer > 1500)
                 {
                     level = 20;
-                    scoreValue += 50;
+                    scoreValue += 20;
                 }
                 base.Update(gameTime);
             }
@@ -156,7 +160,7 @@ namespace LinkInBomberland
             else
             {
                 counter++;
-                if(counter < 20)
+                if(counter < 20) // looks like waiting for bomb explosion populates over link
                 {
                     base.Update(gameTime);
                 }
@@ -164,7 +168,7 @@ namespace LinkInBomberland
             }
             if (!link.LinkAlive)
             {
-                gameOver.Color = Color.Blue;
+                gameOver.Color = Color.Red;
                 this.Components.Add(gameOver);
             }
 

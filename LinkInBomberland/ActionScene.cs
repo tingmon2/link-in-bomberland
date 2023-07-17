@@ -21,6 +21,7 @@ namespace LinkInBomberland
         private Box box;
         private ActionString scoreString;
         private ActionString gameOver; // message when game over
+        private ActionString gameOverWithNewRecord;
         private Bomb bomb;
         private Random r = new Random(); 
         private List<Vector2> wallPositionList = new List<Vector2>(); // To avoid placing bomb on the wall
@@ -93,7 +94,11 @@ namespace LinkInBomberland
                 new Vector2(SIZE_X/2 - 120, SIZE_Y/2), Color.Transparent, link);
             this.Components.Add(gameOver);
 
-            
+            gameOverWithNewRecord = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"),
+                new Vector2(SIZE_X / 2 - 120, SIZE_Y / 2), Color.Transparent, link);
+            this.Components.Add(gameOverWithNewRecord);
+
+
         }
 
         public override void Update(GameTime gameTime)
@@ -168,11 +173,17 @@ namespace LinkInBomberland
             }
             if (!link.LinkAlive)
             {
-                gameOver.Color = Color.Red;
-                this.Components.Add(gameOver);
+                if (sm.updateHighScore(score))
+                {
+                    gameOverWithNewRecord.Color = Color.Red;
+                    this.Components.Add(gameOverWithNewRecord);
+                }
+                else
+                {
+                    gameOver.Color = Color.Red;
+                    this.Components.Add(gameOver);
+                }
             }
-
-
         }
 
         /// <summary>

@@ -24,8 +24,8 @@ namespace LinkInBomberland
             Vector2 position = new Vector2(220, 450);
             tex = game.Content.Load<Texture2D>("Images/link3");
 
-            helpString = new NormalString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"),
-                position, Color.Black, "This is game is made by Taekmin Jeong \nv1 2020-12-06\nv2 2023-07-14");
+            helpString = new NormalString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
+                position, Color.Black, "This is game is made by Taekmin Jeong \nv1 2020-12-06\nv2 2023-07-14\nv3 2023-07-17");
             this.Components.Add(helpString);
         }
 

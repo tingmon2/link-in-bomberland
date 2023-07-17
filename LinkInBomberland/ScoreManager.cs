@@ -15,7 +15,7 @@ namespace LinkInBomberland
             newRecord = false;
         }
 
-        public String readHighScore()
+        private String readHighScore()
         {
             return File.ReadAllText("C:\\Users\\tingmon\\Downloads\\gibhub backup" +
                 "\\link_in_bomberland-master\\LinkInBomberland\\highScore.txt");

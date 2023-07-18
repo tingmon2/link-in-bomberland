@@ -230,6 +230,9 @@ namespace LinkInBomberland
                         actionScene.hide();
                         startScene.show();
                         this.Components.Remove(actionScene);
+                        actionScene.Score = 0;
+                        highScoreScene.UpdateTopTenString(this, spriteBatch);
+                        actionScene.ScoreUpdateDone = false;
                     }
                 }
             }

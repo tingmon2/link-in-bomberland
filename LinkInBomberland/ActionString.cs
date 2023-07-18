@@ -22,6 +22,7 @@ namespace LinkInBomberland
         private Link link;
         private string score;
         private bool newRecord;
+        private ActionScene actionScene;
 
         public SpriteFont Font { get => font; set => font = value; }
         public string Message { get => message; set => message = value; }
@@ -33,7 +34,8 @@ namespace LinkInBomberland
             Vector2 position,
             Color color,
             Link link,
-            bool newRecord) : base(game)
+            bool newRecord,
+            ActionScene actionScene) : base(game)
         {
             this.spriteBatch = spriteBatch;
             this.font = font;
@@ -41,6 +43,7 @@ namespace LinkInBomberland
             this.color = color;
             this.link = link;
             this.newRecord = newRecord;
+            this.actionScene = actionScene;
 
             if (color == Color.Red)
             {
@@ -50,8 +53,6 @@ namespace LinkInBomberland
             {
                 show();
             }
-
-
         }
 
         public void hide()
@@ -79,23 +80,22 @@ namespace LinkInBomberland
             if(position == Vector2.Zero)
             {
                 // shows score on the top-left screen 
-                message = ActionScene.Score.ToString();
+                message = actionScene.Score.ToString();
             }
             else
             {
+                score = actionScene.Score.ToString();
                 if (newRecord)
                 {
-                    score = ActionScene.Score.ToString();
                     message = "----------- Game Over ----------" +
                         "\n        Link is attacked!" +
                         "\n        Your score is " + score +
-                        "\n        Congratulations! New Record!" +
+                        "\n  Congratulations! New Record!" +
                         "\n        Press ESC button";
                 }
                 else
                 {
                     // game over string
-                    score = ActionScene.Score.ToString();
                     message = "----------- Game Over ----------" +
                         "\n        Link is attacked!" +
                         "\n        Your score is " + score +

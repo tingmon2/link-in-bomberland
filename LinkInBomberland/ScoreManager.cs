@@ -10,6 +10,10 @@ namespace LinkInBomberland
     internal class ScoreManager
     {
         bool newRecord;
+        //bool updateDone = false;
+
+        //public bool UpdateDone { get => updateDone; set => updateDone = value; }
+
         public ScoreManager() 
         {
             newRecord = false;
@@ -42,7 +46,6 @@ namespace LinkInBomberland
                 {
                     scores.Add(score);
                 }
-
             }
             scores.Sort();
             scores.Reverse();
@@ -65,7 +68,7 @@ namespace LinkInBomberland
             }
             scores.Sort();
             scores.Reverse();
-            //scores.RemoveRange(scores.Count - 2, 2);
+            scores.RemoveAt(scores.Count - 1);
             if (scores.Contains(newScore))
             {
                 newRecord = true;
@@ -79,11 +82,15 @@ namespace LinkInBomberland
 
         private String printHighScoreString(List<int> topTenList)
         {
+            int counter = 0;
             StringBuilder sb = new StringBuilder();
             foreach (int score in topTenList)
             {
+                counter++;
                 sb.Append(score);
                 sb.Append(Environment.NewLine);
+                if (counter == 10)
+                    break;
             }
             return sb.ToString();
         }
@@ -91,12 +98,16 @@ namespace LinkInBomberland
         private String printHighScoreString(List<int> topTenList, String delimiter)
         {
             int rank = 0;
+            int counter = 0;
             StringBuilder sb = new StringBuilder();
             foreach (int score in topTenList)
             {
+                counter++;
                 sb.Append(++rank + delimiter + " ");
                 sb.Append(score);
                 sb.Append(Environment.NewLine);
+                if (counter == 10)
+                    break;
             }
             return sb.ToString();
         }

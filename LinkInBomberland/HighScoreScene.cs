@@ -24,7 +24,7 @@ namespace LinkInBomberland
         {
             this.spriteBatch = spriteBatch;
             Vector2 position1 = new Vector2(450, 100);
-            Vector2 position2 = new Vector2(450, 150);
+
             tex = game.Content.Load<Texture2D>("Images/link1");
             sm = new ScoreManager();
 
@@ -32,6 +32,13 @@ namespace LinkInBomberland
                 position1, Color.Red, "This is your Top 10 score record!");
             this.Components.Add(msgString);
 
+            UpdateTopTenString(game, spriteBatch);
+        }
+
+        public void UpdateTopTenString(Game game, SpriteBatch spriteBatch)
+        {
+            this.Components.Remove(highScoreString);
+            Vector2 position2 = new Vector2(450, 150);
             String topTen = sm.showHighScoreScene();
             highScoreString = new NormalString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
                 position2, Color.Blue, topTen);

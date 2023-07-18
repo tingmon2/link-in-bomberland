@@ -35,8 +35,9 @@ namespace LinkInBomberland
         private SoundEffect bombSound;
         private int level = 100;
         private int counter = 0;
-        private static int score = 0;
+        private int score = 0;
         private int scoreValue = 100;
+        private bool scoreUpdateDone = false;
 
         private int gameTimer = 0;
         private static Game gameStatic;
@@ -47,8 +48,11 @@ namespace LinkInBomberland
         private const int SIZE_X = 770;
         private const int SIZE_Y = 490;
 
+        
+
         public bool IsGameOver { get => isGameOver; set => isGameOver = value; }
-        public static int Score { get => score; set => score = value; }
+        public int Score { get => score; set => score = value; }
+        public bool ScoreUpdateDone { get => scoreUpdateDone; set => scoreUpdateDone = value; }
 
         public ActionScene(Game game, SpriteBatch spriteBatch) : base(game)
         {
@@ -86,16 +90,16 @@ namespace LinkInBomberland
 
             //score string
             scoreString = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Regular"),
-                Vector2.Zero, Color.Black, link, false);
+                Vector2.Zero, Color.Black, link, false, this);
             this.Components.Add(scoreString);
             
             //game over string
             gameOver = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"), 
-                new Vector2(SIZE_X/2 - 120, SIZE_Y/2), Color.Transparent, link, false);
+                new Vector2(SIZE_X/2 - 120, SIZE_Y/2), Color.Transparent, link, false, this);
             this.Components.Add(gameOver);
 
             gameOverWithNewRecord = new ActionString(game, spriteBatch, game.Content.Load<SpriteFont>("Fonts/Hilight"),
-                new Vector2(SIZE_X / 2 - 120, SIZE_Y / 2), Color.Transparent, link, true);
+                new Vector2(SIZE_X / 2 - 120, SIZE_Y / 2), Color.Transparent, link, true, this);
             this.Components.Add(gameOverWithNewRecord);
 
 
@@ -169,17 +173,19 @@ namespace LinkInBomberland
             }
             if (!link.LinkAlive)
             {
-                if (sm.updateHighScore(score))
+                if (!ScoreUpdateDone)
                 {
-                    gameOverWithNewRecord.Color = Color.Red;
-                    this.Components.Add(gameOverWithNewRecord);
-                    score = 0;
-                }
-                else
-                {
-                    gameOver.Color = Color.Red;
-                    this.Components.Add(gameOver);
-                    score = 0;
+                    if (sm.updateHighScore(score))
+                    {
+                        gameOverWithNewRecord.Color = Color.Red;
+                        this.Components.Add(gameOverWithNewRecord);
+                    }
+                    else
+                    {
+                        gameOver.Color = Color.Red;
+                        this.Components.Add(gameOver);
+                    }
+                    ScoreUpdateDone = true;
                 }
             }
         }

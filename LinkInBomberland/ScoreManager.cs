@@ -10,9 +10,6 @@ namespace LinkInBomberland
     internal class ScoreManager
     {
         bool newRecord;
-        //bool updateDone = false;
-
-        //public bool UpdateDone { get => updateDone; set => updateDone = value; }
 
         public ScoreManager() 
         {

@@ -38,9 +38,9 @@ namespace LinkInBomberland
 
         private const int ROW = 8;
         private const int COL = 10;
-        private const int FRAMELENTH = 10;
-        private const int WALL_WIDTH = 70;
-        private const int WALK_INTERVAL = 15;
+        private const int FRAMELENTH = 10; // each direction has 10 animation image
+        private const int WALL_WIDTH = 70; 
+        private const int WALK_INTERVAL = 15; // walkCounter/WALK_INTERVAL = 1 walkSound
 
 
         public Vector2 Position { get => position; set => position = value; }
@@ -120,13 +120,13 @@ namespace LinkInBomberland
             {
                 frameIndex = index;
             }
-            frameIndex++;
+            frameIndex++; // indicate animation index for drawing
             frameCounter++;
             // prevent animation shows any other direction image
             // if link is moving left, shows only frames for left moving
             if (frameCounter >= FRAMELENTH)
             {
-                frameIndex = index;
+                frameIndex = index; // go back to first animation index of current direction
                 frameCounter = 0;
             }
             delayCounter = 0;
@@ -154,6 +154,20 @@ namespace LinkInBomberland
             {
                 if (ks.IsKeyDown(Keys.Up))
                 {
+                    if (frameIndex < 20 || frameIndex > 29 )
+                    {
+                        // change animation of direction immediately
+                        IndexUpdate(20);
+                    }
+                    else
+                    {
+                        delayCounter++;
+                        // update frame index when delay counter is bigger than delay
+                        if (delayCounter > delay)
+                        {
+                            IndexUpdate(20);
+                        }
+                    }
                     // moving up is banned. maintain position
                     if (BanUp)
                     {
@@ -165,24 +179,27 @@ namespace LinkInBomberland
                         position -= speedY;
                         walkCounter++;
                     }
-
                     // link is at the edge of top. maintain position
                     if (position.Y < 0 + WALL_WIDTH)
                     {
                         position.Y = WALL_WIDTH;
                         walkCounter++;
                     }
-
-                    delayCounter++;
-                    // update frame index when delay counter is bigger than delay
-                    if (delayCounter > delay)
-                    {
-                        IndexUpdate(20);
-                    }
-
                 }
                 else if (ks.IsKeyDown(Keys.Down))
                 {
+                    if (frameIndex > 9)
+                    {
+                        IndexUpdate(0);
+                    }
+                    else
+                    {
+                        delayCounter++;
+                        if (delayCounter > delay)
+                        {
+                            IndexUpdate(0);
+                        }
+                    }
                     if (BanDown)
                     {
                         position = lastPosition;
@@ -193,21 +210,26 @@ namespace LinkInBomberland
                         position += speedY;
                         walkCounter++;
                     }
-
                     if (position.Y > 560 - frames[frameIndex].Height / 2 - WALL_WIDTH)
                     {
                         position.Y = 560 - frames[frameIndex].Height / 2 - WALL_WIDTH;
                         walkCounter++;
                     }
-                    delayCounter++;
-                    if (delayCounter > delay)
-                    {
-                        IndexUpdate(0);
-                    }
-
                 }
                 else if (ks.IsKeyDown(Keys.Left))
                 {
+                    if (frameIndex < 10 || frameIndex > 19)
+                    {
+                        IndexUpdate(10);
+                    }
+                    else
+                    {
+                        delayCounter++;
+                        if (delayCounter > delay)
+                        {
+                            IndexUpdate(10);
+                        }
+                    }
                     if (BanLeft)
                     {
                         position = lastPosition;
@@ -218,20 +240,26 @@ namespace LinkInBomberland
                         position -= speedX;
                         walkCounter++;
                     }
-
                     if (position.X < 0 + WALL_WIDTH)
                     {
                         position.X = WALL_WIDTH;
                         walkCounter++;
                     }
-                    delayCounter++;
-                    if (delayCounter > delay)
-                    {
-                        IndexUpdate(10);
-                    }
                 }
                 else if (ks.IsKeyDown(Keys.Right))
                 {
+                    if (frameIndex < 30 || frameIndex > 39)
+                    {
+                        IndexUpdate(30);
+                    }
+                    else
+                    {
+                        delayCounter++;
+                        if (delayCounter > delay)
+                        {
+                            IndexUpdate(30);
+                        }
+                    }
                     if (BanRight)
                     {
                         position = lastPosition;
@@ -242,17 +270,10 @@ namespace LinkInBomberland
                         position += speedX;
                         walkCounter++;
                     }
-
                     if (position.X > 840 - frames[frameIndex].Width / 2 - WALL_WIDTH)
                     {
                         position.X = 840 - frames[frameIndex].Width / 2 - WALL_WIDTH;
                         walkCounter++;
-                    }
-
-                    delayCounter++;
-                    if (delayCounter > delay)
-                    {
-                        IndexUpdate(30);
                     }
                 }
                 // play walking sound effect

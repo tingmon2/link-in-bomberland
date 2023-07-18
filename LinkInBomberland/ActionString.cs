@@ -90,7 +90,7 @@ namespace LinkInBomberland
                     message = "----------- Game Over ----------" +
                         "\n        Link is attacked!" +
                         "\n        Your score is " + score +
-                        "\n  Congratulations! New Record!" +
+                        "\n Congratulations! New Record!" +
                         "\n        Press ESC button";
                 }
                 else

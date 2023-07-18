@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinkInBomberland.exe" size="204800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LinkInBomberland.exe" size="205312">
       <assemblyIdentity name="LinkInBomberland" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ergrFelAYuyZuISRQDa6vRg6Qr8nR1ZBMjSpOZEvluA=</dsig:DigestValue>
+        <dsig:DigestValue>iHzzu2Dbj6vSETVPwOQYdt8ngpiKLXTFEpQ/3f32Aw8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
